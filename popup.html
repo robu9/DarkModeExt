@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggle</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <div class="header">
+            <div class="moon-icon">🌙</div>
+            <h2>Dark Mode</h2>
+        </div>
+        
+        <div class="content">
+            <div class="status-display">
+                <span id="status-text">Loading...</span>
+                <div class="status-indicator" id="status-indicator"></div>
+            </div>
+            
+            <div class="toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <div class="domain-info">
+                <span id="current-domain">example.com</span>
+            </div>
+            
+            <div class="controls">
+                <button id="reset-btn" class="control-btn">
+                    <span>🔄</span>
+                    Reset
+                </button>
+                <button id="settings-btn" class="control-btn">
+                    <span>⚙️</span>
+                    Settings
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

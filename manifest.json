@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Dark Mode",
+  "version": "1.0",
+  "description": "Convert any website to dark mode with a beautiful toggle interface",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Toggle Dark Mode"
+  }
+
+}
