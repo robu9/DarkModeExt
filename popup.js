@@ -58,23 +58,23 @@ document.addEventListener('DOMContentLoaded', async () => {
             await chrome.storage.local.set({ [domain]: false });
             
             // Visual feedback
-            resetBtn.style.background = 'rgba(76, 175, 80, 0.3)';
-            resetBtn.textContent = '✓ Reset';
+            resetBtn.style.background = 'rgba(61, 213, 152, 0.3)';
+            resetBtn.innerHTML = '<span class="icon">✓</span><span class="label">Reset</span>';
             
             setTimeout(() => {
                 resetBtn.style.background = '';
-                resetBtn.innerHTML = '🔄Reset';
+                resetBtn.innerHTML = '<span class="icon">🔄</span><span class="label">Reset</span>';
             }, 1000);
             
         } catch (error) {
             console.error('Failed to reset:', error);
             // Show error feedback
-            resetBtn.style.background = 'rgba(244, 67, 54, 0.3)';
-            resetBtn.textContent = '✗ Error';
+            resetBtn.style.background = 'rgba(255, 107, 107, 0.3)';
+            resetBtn.innerHTML = '<span class="icon">✕</span><span class="label">Error</span>';
             
             setTimeout(() => {
                 resetBtn.style.background = '';
-                resetBtn.innerHTML = '🔄Reset';
+                resetBtn.innerHTML = '<span class="icon">🔄</span><span class="label">Reset</span>';
             }, 1000);
             
             // Force reload the page as fallback
@@ -94,11 +94,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // Visual feedback
             if (newGlobal) {
-                settingsBtn.style.background = 'rgba(76, 175, 80, 0.3)';
-                settingsBtn.innerHTML = '✓Global ON';
+                settingsBtn.style.background = 'rgba(61, 213, 152, 0.3)';
+                settingsBtn.innerHTML = '<span class="icon">✓</span><span class="label">Global ON</span>';
             } else {
-                settingsBtn.style.background = 'rgba(255, 152, 0, 0.3)';
-                settingsBtn.innerHTML = '⚠️Global OFF';
+                settingsBtn.style.background = 'rgba(255, 193, 7, 0.3)';
+                settingsBtn.innerHTML = '<span class="icon">⚠️</span><span class="label">Global OFF</span>';
                 
                 // Also disable current site
                 toggle.checked = false;
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             setTimeout(() => {
                 settingsBtn.style.background = '';
-                settingsBtn.innerHTML = '⚙️Settings';
+                settingsBtn.innerHTML = '<span class="icon">⚙️</span><span class="label">Settings</span>';
             }, 2000);
             
         } catch (error) {
@@ -126,9 +126,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     function updateStatus(enabled) {
         if (enabled) {
             statusText.textContent = 'Dark Mode Active';
+            statusText.classList.remove('inactive');
             statusIndicator.classList.remove('inactive');
         } else {
             statusText.textContent = 'Light Mode';
+            statusText.classList.add('inactive');
             statusIndicator.classList.add('inactive');
         }
     }

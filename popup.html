@@ -8,39 +8,50 @@
 </head>
 <body>
     <div class="popup-container">
-        <div class="header">
-            <div class="moon-icon">🌙</div>
-            <h2>Dark Mode</h2>
-        </div>
-        
-        <div class="content">
-            <div class="status-display">
-                <span id="status-text">Loading...</span>
-                <div class="status-indicator" id="status-indicator"></div>
+        <header class="header">
+            <div class="brand">
+                <span class="brand-icon">🌙</span>
+                <div class="brand-text">
+                    <h1>Dark Mode</h1>
+                    <p class="subtitle">Instant theme control</p>
+                </div>
             </div>
-            
-            <div class="toggle-container">
+            <div class="header-status">
+                <span id="status-text" class="status-pill">Loading...</span>
+                <span class="status-indicator" id="status-indicator"></span>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="mode-card">
+                <div class="mode-text">
+                    <h2>Appearance</h2>
+                    <p>Enable dark mode for the current site.</p>
+                </div>
                 <label class="toggle-switch">
                     <input type="checkbox" id="dark-mode-toggle">
                     <span class="slider"></span>
                 </label>
-            </div>
-            
-            <div class="domain-info">
-                <span id="current-domain">example.com</span>
-            </div>
-            
-            <div class="controls">
-                <button id="reset-btn" class="control-btn">
-                    <span>🔄</span>
-                    Reset
+            </section>
+
+            <section class="info-card">
+                <span class="info-label">Active site</span>
+                <div class="domain-info">
+                    <span id="current-domain">example.com</span>
+                </div>
+            </section>
+
+            <section class="controls">
+                <button id="reset-btn" class="control-btn secondary">
+                    <span class="icon">🔄</span>
+                    <span class="label">Reset</span>
                 </button>
-                <button id="settings-btn" class="control-btn">
-                    <span>⚙️</span>
-                    Settings
+                <button id="settings-btn" class="control-btn primary">
+                    <span class="icon">⚙️</span>
+                    <span class="label">Settings</span>
                 </button>
-            </div>
-        </div>
+            </section>
+        </main>
     </div>
     <script src="popup.js"></script>
 </body>
